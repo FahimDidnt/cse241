@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Got Hacked!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 8vw; /* Responsive font size */
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 80%; /* Responsive image */
+            height: auto;
+            margin-bottom: 20px;
+        }
+        pre {
+            text-align: left;
+            display: block;
+            margin: 0 auto;
+            font-size: 4vw; /* Responsive font size */
+            max-width: 100%;
+            word-wrap: break-word;
+            white-space: pre-wrap; /* Wrap long lines */
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: rgba(45, 35, 66, 0.2) 0 2px 4px;
+        }
+        .button {
+            align-items: center;
+            appearance: none;
+            background-color: #FCFCFD;
+            border-radius: 4px;
+            border-width: 0;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #36395A;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono", monospace;
+            height: 48px;
+            width: 100%; /* Responsive width */
+            max-width: 100px; /* Max width for larger screens */
+            justify-content: center;
+            line-height: 1;
+            padding: 0 16px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            font-size: 4vw; /* Responsive font size */
+            margin-top: 30px;
+        }
+        .button:focus {
+            box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        }
+        .button:hover {
+            box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+        .button:active {
+            box-shadow: #D6D6E7 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+        /* Media query for larger devices */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+            pre {
+                font-size: 14px;
+            }
+            .button {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>You Got Hacked!</h1>
+        <img src="https://github.com/fahimctrlx/demo/blob/main/hacked.gif?raw=true" alt="Hacking Gif">
+        <pre id="info">
+Loading your information...
+        </pre>
+        <button class="button" onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        const token = '6a1f6abe56aca5';
+
+        // Fetch user's IP address and location details
+        fetch(`https://ipinfo.io/json?token=${token}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                const ip = data.ip;
+                const country = data.country;
+
+                const info = `
+N: ${data.hostname || 'N/A'}
+W: ${data.org || 'N/A'}
+IPV6: ${data.ipv6 || 'Not Available'}
+DMZ: Enabled
+ISP: ${data.org}
+DNS/ALT DNS: 8.8.8.8 / 8.8.4.4
+WAN: ${ip}
+GATEWAY: 192.168.1.254
+SUBNET MASK: 255.255.255.0
+UDP OPEN PORTS: 53, 67, 68
+TCP OPEN PORTS: 80, 443
+Country: ${country}
+                `;
+                document.getElementById('info').textContent = info;
+            })
+            .catch(error => {
+                console.error('Error fetching IP information:', error);
+                document.getElementById('info').textContent = 'Failed to load user information. Please check the console for details.';
+            });
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
