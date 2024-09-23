@@ -75,7 +75,7 @@
         <button class="button" onclick="redirectToMaterials()">All PDF</button>
     </div>
 
-    <!-- Whatsapp Group Section -->
+    <!-- WhatsApp Group Section -->
     <h1>Join WhatsApp Groups</h1>
     <div class="buttons">
         <button class="button" onclick="redirectToCSE107()">CSE107</button>
@@ -85,10 +85,26 @@
         <button class="button" onclick="redirectToSOC103()">SOC103</button>
     </div>
 
+    <!-- Class Routine Section -->
+    <h1>Class Routine</h1>
+    <div class="buttons">
+        <button class="button" onclick="viewRoutine()">View</button>
+        <button class="button" onclick="downloadRoutine()">Download</button>
+    </div>
+
+    <!-- Class Representatives Section -->
+    <h1>Class Representatives</h1>
+    <div class="buttons">
+        <button class="button" onclick="redirectToCRContact()">Contact Info</button>
+    </div>
+
     <script>
+        // Class Material redirection
         function redirectToMaterials() {
             window.location.href = "https://drive.google.com/drive/folders/1qbcH02ckNUpotjuTKZ82j4S8yXyJTpq_"; // All PDF drive link
         }
+
+        // WhatsApp Group redirection
         function redirectToCSE107() {
             window.location.href = "https://chat.whatsapp.com/HoSikaoOwte40PSu5v69Et"; // Add the Whatsapp link for CSE107 here
         }
@@ -103,6 +119,19 @@
         }
         function redirectToSOC103() {
             window.location.href = "https://chat.whatsapp.com/BpUwRmKld3TKzWJYXMOZze"; // Add the Whatsapp link for SOC103 here
+        }
+
+        // Class Routine redirection
+        function viewRoutine() {
+            window.location.href = "https://raw.githubusercontent.com/FahimDidnt/cse241/refs/heads/main/Class%20Routine.jpg"; // Link to view the routine
+        }
+        function downloadRoutine() {
+            window.location.href = "https://raw.githubusercontent.com/FahimDidnt/cse241/refs/heads/main/Class%20Routine.jpg"; // Link to download the routine
+        }
+
+        // Class Representative Contact redirection
+        function redirectToCRContact() {
+            window.location.href = "cr.html"; // Redirects to a demo contact page
         }
     </script>
 </body>
