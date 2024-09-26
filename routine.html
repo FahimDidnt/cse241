@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Routine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7; /* Optional background color */
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* Container for table to allow horizontal scrolling on mobile */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 1000px; /* Sets a max-width for larger screens */
+            border: 1px solid #333;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        td {
+            background-color: #d5f5e3;
+        }
+
+        .even-row td {
+            background-color: #aed6f1;
+        }
+
+        /* Responsive design for smaller devices */
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px; /* Decrease font size on smaller devices */
+            }
+
+            th, td {
+                padding: 8px; /* Smaller padding */
+            }
+
+            h1 {
+                font-size: 30px; /* Smaller header size */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px; /* Even smaller header for mobile */
+            }
+
+            table {
+                font-size: 12px; /* Further reduce table font size for very small devices */
+            }
+
+            th, td {
+                padding: 5px; /* Further reduce padding */
+            }
+        }
+
+        /* For vertical centering in smaller screens */
+        @media (max-height: 600px) {
+            body {
+                justify-content: flex-start;
+                padding-top: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="table-container">
+        <h1>Class Routine</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>09:30-11:40</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>Physics Lab</td>
+                    <td>Discrete Math</td>
+                </tr>
+                <tr class="even-row">
+                    <td>11:50-02:30</td>
+                    <td></td>
+                    <td>EDR</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>01:15-02:30</td>
+                    <td>Sociology</td>
+                    <td></td>
+                    <td>Sociology</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="even-row">
+                    <td>02:40-03:55</td>
+                    <td>Calculus I</td>
+                    <td>ICS</td>
+                    <td>Calculus I</td>
+                    <td>ICS</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>04:05-05:20</td>
+                    <td>English</td>
+                    <td>Physics</td>
+                    <td>English</td>
+                    <td>Physics</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
