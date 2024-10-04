@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice Board</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+        }
+
+        .notice-board {
+            width: 90%;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            overflow-y: auto; /* Allow scrolling if content overflows */
+            max-height: 90vh;  /* Limit height for desktop */
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .notice {
+            background-color: #eaf2f8;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            text-align: left;
+            position: relative;
+        }
+
+        .notice h3 {
+            margin: 0 0 5px;
+            font-size: 20px;
+            color: #2980b9;
+        }
+
+        .notice p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .notice time {
+            display: block;
+            font-size: 12px;
+            color: #888;
+            margin-top: 8px;
+        }
+
+        /* Sticky Notice Flag */
+        .sticky-flag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #e74c3c;
+            color: #fff;
+            font-size: 12px;
+            padding: 4px 6px;
+            border-radius: 3px;
+        }
+
+        /* Back button styling */
+        .button {
+            align-items: center;
+            appearance: none;
+            background-color: #FCFCFD;
+            border-radius: 4px;
+            border-width: 0;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #36395A;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono", monospace;
+            height: 48px;
+            padding: 0 16px;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            text-align: center;
+            text-decoration: none;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            font-size: 18px;
+            min-width: 120px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .button:active {
+            box-shadow: #D6D6E7 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .notice h3 {
+                font-size: 18px;
+            }
+
+            .notice p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="notice-board">
+        <h1>Notice Board</h1>
+
+        <!-- Physics Notice -->
+        <div class="notice">
+            <h3>Physics (107/108)</h3>
+            <p>
+                • Lab Report 3 submission is on Wednesday, 9th October.<br>
+                • Assignment 1 should be submitted as soon as possible.<br>
+                • Quiz 1 is on Monday, 14th October (Syllabus: SHM, Damping – problem-based & graph).
+            </p>
+            <time>Posted on: 4th October 2024</time>
+        </div>
+
+        <!-- ICS Notice -->
+        <div class="notice">
+            <h3>ICS (CSE107)</h3>
+            <p>
+                • Quiz 1 on Monday, 7th October (1st & 2nd lecture).
+            </p>
+            <time>Posted on: 4th October 2024</time>
+        </div>
+
+        <!-- Math Notice -->
+        <div class="notice">
+            <h3>Math (MAT123)</h3>
+            <p>
+                • Quiz 2 on 8th October (Syllabus: Chain rule).<br>
+                • Assignment 2 has been provided, but the deadline is not yet confirmed.
+            </p>
+            <time>Posted on: 4th October 2024</time>
+        </div>
+
+        <!-- Discrete Math Notice -->
+        <div class="notice">
+            <h3>Discrete Mathematics (CSE209)</h3>
+            <p>
+                • Assignment 1 has been provided, with a deadline of 19th October.
+            </p>
+            <time>Posted on: 4th October 2024</time>
+        </div>
+
+        <!-- English Notice -->
+        <div class="notice">
+            <h3>English (ENG101)</h3>
+            <p>
+                • A class test will be held on Sunday. It will include:<br>
+                1. Paragraph writing.<br>
+                2. Reading comprehension questions on the "Principle of Communication" (MCQ/short answer/both).
+            </p>
+            <time>Posted on: 4th October 2024</time>
+        </div>
+
+        <!-- Back button -->
+        <div style="text-align: center;">
+            <button class="button" onclick="goBack()">Back</button>
+        </div>
+
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "subject-page.html"; // Redirect to the subject page
+        }
+    </script>
+    
+</body>
+</html>
