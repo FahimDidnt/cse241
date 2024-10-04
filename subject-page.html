@@ -5,109 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Material and WhatsApp Groups</title>
     <style>
+        /* Overall body styling */
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0; /* Light gray background */
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align items to start from the top */
+            height: 100vh; /* Full viewport height */
+            box-sizing: border-box;
+            padding: 20px; /* Add padding around content */
+            overflow-y: auto; /* Allow scrolling if content overflows */
         }
+
+        /* Card styling */
+        .card {
+            background-color: #ffffff; /* White card background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Card shadow */
+            margin: 4px; /* Significantly reduced margin between cards */
+            padding: 20px; /* Padding inside cards */
+            width: 300px; /* Fixed width for cards */
+            text-align: center; /* Center text in cards */
+        }
+
         h1 {
-            margin-bottom: 20px;
+            font-size: 24px; /* Heading size */
+            color: #333333; /* Dark gray for text */
+            margin-bottom: 4px; /* Significantly reduced space below heading */
         }
+
         .buttons {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 10px; /* Space between buttons */
         }
+
         .button {
             align-items: center;
             appearance: none;
-            background-color: #FCFCFD;
+            background-color: #FCFCFD; /* Original button background */
             border-radius: 4px;
             border-width: 0;
-            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset; /* Original shadow */
             box-sizing: border-box;
-            color: #36395A;
+            color: #36395A; /* Original text color */
             cursor: pointer;
             display: inline-flex;
-            font-family: "JetBrains Mono", monospace;
-            height: 48px;
-            padding: 0 16px;
+            font-family: "JetBrains Mono", monospace; /* Original font family */
+            height: 48px; /* Original button height */
+            padding: 0 16px; /* Original button padding */
             justify-content: center;
             line-height: 1;
             list-style: none;
             overflow: hidden;
             text-align: center;
             text-decoration: none;
-            transition: box-shadow .15s, transform .15s;
+            transition: box-shadow .15s, transform .15s; /* Original transition */
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
             white-space: nowrap;
             will-change: box-shadow, transform;
-            font-size: 18px;
-            min-width: 120px;
+            font-size: 18px; /* Original font size */
+            min-width: 120px; /* Original min width */
         }
+
         .button:focus {
-            box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset; /* Original focus shadow */
         }
+
         .button:hover {
-            box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset; /* Original hover shadow */
             transform: translateY(-2px);
         }
+
         .button:active {
-            box-shadow: #D6D6E7 0 3px 7px inset;
+            box-shadow: #D6D6E7 0 3px 7px inset; /* Original active shadow */
             transform: translateY(2px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .card {
+                width: 90%; /* Full width on small screens */
+            }
+
+            h1 {
+                font-size: 20px; /* Smaller heading size for mobile */
+            }
+
+            .button {
+                font-size: 16px; /* Adjusted font size for buttons */
+            }
         }
     </style>
 </head>
 <body>
     <!-- Class Material Section -->
-    <h1>Class Materials</h1>
-    <div class="buttons">
-        <button class="button" onclick="redirectToMaterials()">All PDF</button>
+    <div class="card">
+        <h1>Class Materials</h1>
+        <div class="buttons">
+            <button class="button" onclick="redirectToMaterials()">All PDF</button>
+        </div>
     </div>
 
     <!-- WhatsApp Group Section -->
-    <h1>Join WhatsApp Groups</h1>
-    <div class="buttons">
-        <button class="button" onclick="redirectToCSE107()">CSE107</button>
-        <button class="button" onclick="redirectToENG101()">ENG101</button>
-        <button class="button" onclick="redirectToMAT1231()">MAT123</button>
-        <button class="button" onclick="redirectToPHY107()">PHY107</button>
-        <button class="button" onclick="redirectToSOC103()">SOC103</button>
+    <div class="card">
+        <h1>Join WhatsApp Groups</h1>
+        <div class="buttons">
+            <button class="button" onclick="redirectToCSE107()">CSE107</button>
+            <button class="button" onclick="redirectToENG101()">ENG101</button>
+            <button class="button" onclick="redirectToMAT123()">MAT123</button>
+            <button class="button" onclick="redirectToPHY107()">PHY107</button>
+            <button class="button" onclick="redirectToSOC103()">SOC103</button>
+        </div>
     </div>
 
     <!-- Class Routine Section -->
-    <h1>Class Routine</h1>
-    <div class="buttons">
-        <button class="button" onclick="viewRoutine()">View</button>
-        <button class="button" onclick="downloadRoutine()">Download</button>
+    <div class="card">
+        <h1>Class Routine</h1>
+        <div class="buttons">
+            <button class="button" onclick="viewRoutine()">View</button>
+            <button class="button" onclick="downloadRoutine()">Download</button>
+        </div>
     </div>
 
     <!-- Class Representatives Section -->
-    <h1>Class Representatives</h1>
-    <div class="buttons">
-        <button class="button" onclick="redirectToCRContact()">Contact Info</button>
+    <div class="card">
+        <h1>Class Representatives</h1>
+        <div class="buttons">
+            <button class="button" onclick="redirectToCRContact()">Contact Info</button>
+        </div>
     </div>
 
     <!-- Notice Board Section -->
-    <h1>Notice Board</h1>
-    <div class="buttons">
-        <button class="button" onclick="redirectToNoticeBoard()">View Notices</button>
+    <div class="card">
+        <h1>Notice Board</h1>
+        <div class="buttons">
+            <button class="button" onclick="redirectToNoticeBoard()">View Notices</button>
+        </div>
     </div>
 
     <!-- Assignment Button Section -->
-    <h1>Assignments</h1>
-    <div class="buttons">
-        <button class="button" onclick="redirectToAssignment()">Assignment</button>
+    <div class="card">
+        <h1>Assignments</h1>
+        <div class="buttons">
+            <button class="button" onclick="redirectToAssignment()">Assignment</button>
+        </div>
     </div>
 
     <script>
@@ -123,8 +171,8 @@
         function redirectToENG101() {
             window.location.href = "https://chat.whatsapp.com/CPhOj88APpc5YFRefSUz7Q"; // Add the Whatsapp link for ENG101 here
         }
-        function redirectToMAT1231() {
-            window.location.href = "https://chat.whatsapp.com/DYPXWeGC587LKvah2TCJuV"; // Add the Whatsapp link for MAT1231 here
+        function redirectToMAT123() {
+            window.location.href = "https://chat.whatsapp.com/DYPXWeGC587LKvah2TCJuV"; // Add the Whatsapp link for MAT123 here
         }
         function redirectToPHY107() {
             window.location.href = "https://chat.whatsapp.com/FS0jB5ll2PWI8RpfxaEuwK"; // Add the Whatsapp link for PHY107 here
@@ -153,7 +201,7 @@
 
         // Assignment redirection
         function redirectToAssignment() {
-            window.location.href = "https://drive.google.com/drive/folders/1jkeXhcgIlilrQ8Kph6TnEai88L_ePnOd"; // Redirect to google.com for assignment (change as needed)
+            window.location.href = "https://drive.google.com/drive/folders/1jkeXhcgIlilrQ8Kph6TnEai88L_ePnOd"; // Redirect to assignment link
         }
     </script>
 </body>
