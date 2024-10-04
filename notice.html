@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px; /* Added padding to the body for better spacing */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,7 +17,7 @@
         }
 
         .notice-board {
-            width: 90%;
+            width: 100%; /* Changed to 100% for better responsiveness */
             max-width: 800px;
             background-color: #fff;
             border-radius: 8px;
@@ -103,6 +103,7 @@
             font-size: 18px;
             min-width: 120px;
             margin-top: 20px;
+            margin-bottom: 20px; /* Added bottom margin for space from the screen edge */
         }
         .button:hover {
             box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
@@ -116,6 +117,10 @@
 
         /* Responsive Styling */
         @media (max-width: 768px) {
+            body {
+                padding: 10px; /* Adjusted padding for mobile */
+            }
+
             h1 {
                 font-size: 28px;
             }
