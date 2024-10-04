@@ -6,76 +6,69 @@
     <title>Notice Board</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 20px; /* Added padding to the body for better spacing */
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f7f7f7;
+            background-color: #eef2f3; /* Light gray background */
         }
 
         .notice-board {
-            width: 100%; /* Changed to 100% for better responsiveness */
+            width: 90%;
             max-width: 800px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
+            background-color: #ffffff; /* White background for the notice board */
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+            padding: 30px 20px; /* Fixed padding */
+            text-align: left; /* Align text to the left */
             overflow-y: auto; /* Allow scrolling if content overflows */
-            max-height: 90vh;  /* Limit height for desktop */
+            max-height: 80vh;  /* Limit height for desktop */
+            border: 1px solid #dcdcdc; /* Light border around notice board */
         }
 
         h1 {
-            font-size: 36px;
-            color: #2c3e50;
+            font-size: 32px;
+            color: #333; /* Dark gray for headings */
             margin-bottom: 20px;
+            text-align: center; /* Center the heading */
         }
 
         .notice {
-            background-color: #eaf2f8;
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            text-align: left;
-            position: relative;
+            background-color: #f9f9f9; /* Slightly off-white background */
+            border-left: 4px solid #3498db; /* Blue left border */
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px; /* Increased space between notices */
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+
+        .notice:hover {
+            background-color: #f0f8ff; /* Light blue on hover */
         }
 
         .notice h3 {
-            margin: 0 0 5px;
-            font-size: 20px;
-            color: #2980b9;
+            margin: 0 0 10px;
+            font-size: 22px; /* Larger font for notice titles */
+            color: #2980b9; /* Dark blue for titles */
         }
 
         .notice p {
             margin: 0;
-            font-size: 16px;
-            line-height: 1.5;
+            font-size: 16px; /* Consistent font size for notice text */
+            line-height: 1.6;
         }
 
         .notice time {
             display: block;
-            font-size: 12px;
-            color: #888;
+            font-size: 14px; /* Smaller font for dates */
+            color: #888; /* Gray for dates */
             margin-top: 8px;
         }
 
-        /* Sticky Notice Flag */
-        .sticky-flag {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #e74c3c;
-            color: #fff;
-            font-size: 12px;
-            padding: 4px 6px;
-            border-radius: 3px;
-        }
-
-        /* Back button styling */
+        /* Button Styling */
         .button {
             align-items: center;
             appearance: none;
@@ -92,8 +85,6 @@
             padding: 0 16px;
             justify-content: center;
             line-height: 1;
-            list-style: none;
-            overflow: hidden;
             text-align: center;
             text-decoration: none;
             transition: box-shadow .15s, transform .15s;
@@ -101,10 +92,11 @@
             white-space: nowrap;
             will-change: box-shadow, transform;
             font-size: 18px;
-            min-width: 120px;
-            margin-top: 20px;
-            margin-bottom: 20px; /* Added bottom margin for space from the screen edge */
+            max-width: 200px; /* Set maximum width for the button */
+            margin: 20px auto; /* Center the button */
+            display: block; /* Make button block to center it */
         }
+
         .button:hover {
             box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
             transform: translateY(-2px);
@@ -117,20 +109,21 @@
 
         /* Responsive Styling */
         @media (max-width: 768px) {
-            body {
-                padding: 10px; /* Adjusted padding for mobile */
-            }
-
             h1 {
-                font-size: 28px;
+                font-size: 28px; /* Responsive heading size */
             }
 
             .notice h3 {
-                font-size: 18px;
+                font-size: 20px; /* Responsive title size */
             }
 
             .notice p {
-                font-size: 14px;
+                font-size: 15px; /* Responsive text size */
+            }
+
+            .notice-board {
+                padding: 20px; /* Reduced padding for mobile */
+                margin: 10px; /* Add some margin to the notice board */
             }
         }
     </style>
@@ -191,10 +184,7 @@
         </div>
 
         <!-- Back button -->
-        <div style="text-align: center;">
-            <button class="button" onclick="goBack()">Back</button>
-        </div>
-
+        <button class="button" onclick="goBack()">Back</button>
     </div>
 
     <script>
