@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Routine</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            width: 90%;
+            max-width: 1000px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        td {
+            background-color: #e7f3fe;
+        }
+
+        .even-row td {
+            background-color: #d1e7fd;
+        }
+
+        tr:hover {
+            background-color: #b3e5fc;
+        }
+
+        .table-container {
+            padding: 20px;
+        }
+
+        /* Button Styles */
+        .button {
+            align-items: center;
+            background-color: #FCFCFD;
+            border-radius: 4px;
+            border-width: 0;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            color: #36395A;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono", monospace;
+            height: 48px;
+            padding: 0 16px;
+            justify-content: center;
+            text-decoration: none;
+            transition: box-shadow 0.15s, transform 0.15s;
+            font-size: 18px;
+            min-width: 120px;
+            margin-top: 20px;
+            user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button:hover {
+            box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .button:active {
+            box-shadow: #D6D6E7 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+        .button:focus {
+            box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="table-container">
+        <h1>Exam Routine</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Room No.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PHY107</td>
+                    <td>23 Oct 2024</td>
+                    <td>10:00 AM - 11:00 AM</td>
+                    <td>401</td>
+                </tr>
+                <tr class="even-row">
+                    <td>SOC103</td>
+                    <td>24 Oct 2024</td>
+                    <td>10:00 AM - 11:00 AM</td>
+                    <td>401</td>
+                </tr>
+                <tr>
+                    <td>CSE209</td>
+                    <td>27 Oct 2024</td>
+                    <td>10:00 AM - 11:00 AM</td>
+                    <td>401</td>
+                </tr>
+                <tr class="even-row">
+                    <td>PHY108</td>
+                    <td>27 Oct 2024</td>
+                    <td>01:00 PM - 02:00 PM</td>
+                    <td>519</td>
+                </tr>
+                <tr>
+                    <td>CSE107</td>
+                    <td>28 Oct 2024</td>
+                    <td>01:00 PM - 02:00 PM</td>
+                    <td>204</td>
+                </tr>
+                <tr class="even-row">
+                    <td>MAT123</td>
+                    <td>29 Oct 2024</td>
+                    <td>01:00 PM - 02:00 PM</td>
+                    <td>401</td>
+                </tr>
+                <tr>
+                    <td>ENG101</td>
+                    <td>30 Oct 2024</td>
+                    <td>01:00 PM - 02:00 PM</td>
+                    <td>401</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button class="button" onclick="goBack()">Back</button>
+
+    <script>
+        function goBack() {
+            window.location.href = "subject-page.html";
+        }
+    </script>
+
+</body>
+
+</html>
